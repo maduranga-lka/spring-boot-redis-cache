@@ -3,6 +3,7 @@ services:
   redis-server:
     image: 'maduranga/redis:1.0.0'
   spring-boot-app:
+    restart: always
     build: .
     ports:
       - "8080:8080"
