@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    private UserRepoImpl userRepo;
+    private UserServiceImpl userService;
 
     @GetMapping(path = "/users/{id}")
-    public User getUserById(@PathVariable String id) {
-        return userRepo.getUserById(id);
+    public String getUserNameById(@PathVariable String id) {
+        return userService.getCachedUserById(id);
     }
 
     @GetMapping(path = "/users/{id}/{name}")
-    public boolean addUser(@PathVariable String id, @PathVariable String name) {
+    public User addUser(@PathVariable String id, @PathVariable String name) {
         User user = new User(name, id);
-        return userRepo.save(user);
+        userService.cacheUserObject(user);
+        return user;
     }
 
 }
