@@ -1,0 +1,2 @@
+docker build -t maduranga/spring-boot-redis-cache:1.00 .
+docker run -p 8888:8888 maduranga/spring-boot-redis-cache:1.00
