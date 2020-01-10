@@ -4,3 +4,6 @@ services:
 
 before_install:
   - docker build -t maduranga-lka/spring-boot-redis-cache/spring-boot-redis-cache .
+
+script:
+  - docker run maduranga-lka/spring-boot-redis-cache/spring-boot-redis-cache
