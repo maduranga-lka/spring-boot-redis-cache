@@ -1,0 +1,6 @@
+sudo: required
+services:
+  - spring-boot-redis-cache
+
+before_install:
+  - docker build -t maduranga-lka/spring-boot-redis-cache .
