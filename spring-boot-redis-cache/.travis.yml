@@ -7,3 +7,13 @@ before_install:
 
 script:
   - docker run maduranga-lka/spring-boot-redis-cache/spring-boot-redis-cache
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "spring-boot-redis-cache"
+  env: "spring-redis-docker-env"
+  bucket_name: "elasticbeanstalk-us-east-1-912791273"
+  bucket_path: "spring-boot-redis-cache"
+  on:
+    branch: master
